@@ -34,6 +34,8 @@
     <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
   @endif
 
+  <li class="page-item disabled"><span class="page-link">Total: {{$paginator->total()}}</span></li>
+
   </ul>
 </nav>
 @endif

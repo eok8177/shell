@@ -29,6 +29,11 @@ Route::group(['as' => 'admin.', 'middleware' => 'roles','roles' =>['admin'], 'na
     Route::resource('page', 'PageController');
     Route::resource('banner', 'BannerController');
 
+    Route::get('code', ['as' => 'code.index', 'uses' => 'CodeController@index']);
+    Route::get('code/import', ['as' => 'code.add', 'uses' => 'CodeController@add']);
+    Route::post('code/import', ['as' => 'code.import', 'uses' => 'CodeController@import']);
+    Route::delete('code/{code}', ['as' => 'code.destroy', 'uses' => 'CodeController@destroy']);
+
 });
 
 
