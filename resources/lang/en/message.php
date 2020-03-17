@@ -15,6 +15,8 @@ return [
     'gen_auto' => 'Generated auto',
     'select' => 'Select',
     'delete' => 'Delete',
+    'import' => 'Import',
+    'file' => 'File',
 
     'to_site' => 'Go to site',
     'logout' => 'Logout',
