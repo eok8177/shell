@@ -27,6 +27,8 @@ return [
     'pages' => 'Pages',
     'page' => 'Page',
     'content' => 'Content',
+    'code' => 'Code',
+    'codes' => 'Codes',
 
     'new_user' => 'New user',
     'user' => 'User',

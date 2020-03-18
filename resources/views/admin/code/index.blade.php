@@ -5,6 +5,7 @@
 <div class="page-header row justify-content-between">
   <h5>Code`s</h5>
   <a href="{{ route('admin.code.add') }}" class="btn btn-light"><i class="fa fa-plus-square"></i> @lang('message.import')</a>
+  <a href="{{ route('admin.code.clear') }}" class="btn btn-light">Clear from duplicates</a>
 </div>
 
 <div class="position-relative">

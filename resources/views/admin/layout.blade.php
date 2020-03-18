@@ -34,6 +34,9 @@
           <a class="nav-link" href="{{ route('admin.banner.index') }}">
             <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.banners')</span>
           </a>
+          <a class="nav-link" href="{{ route('admin.code.index') }}">
+            <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.codes')</span>
+          </a>
 
         </div>
 
@@ -84,6 +87,9 @@
             </a>
             <a class="nav-link" href="{{ route('admin.banner.index') }}">
                 <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.banners')</span>
+            </a>
+            <a class="nav-link" href="{{ route('admin.code.index') }}">
+              <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.codes')</span>
             </a>
 
           </div>
