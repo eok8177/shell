@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Auth::routes();
 
@@ -33,6 +31,8 @@ Route::group(['as' => 'admin.', 'middleware' => 'roles','roles' =>['admin'], 'na
     Route::get('code/import', ['as' => 'code.add', 'uses' => 'CodeController@add']);
     Route::post('code/import', ['as' => 'code.import', 'uses' => 'CodeController@import']);
     Route::delete('code/{code}', ['as' => 'code.destroy', 'uses' => 'CodeController@destroy']);
+    Route::get('code/clear', ['as' => 'code.clear', 'uses' => 'CodeController@delDuplicates']);
+    Route::get('code-file/{file}', ['as' => 'code.importFile', 'uses' => 'CodeController@importFile']);
 
 });
 
