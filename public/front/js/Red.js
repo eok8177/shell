@@ -20,6 +20,11 @@ $(document).ready(function () {
                 return Main(e, form, true);
             }
         }
+
+        $(document).on('submit',form,function(e){
+           e.preventDefault();
+           return Main(e, form);
+        });
     });
 
     function Main(e, form, _Enter) {
