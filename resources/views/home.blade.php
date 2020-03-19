@@ -48,6 +48,7 @@
                         logicmsg="Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код"
                         id="txtCode" 
                     />
+                    <span class="small-text">*Код можно проверить только один раз</span>
                 </div>
                 <div class="clear"></div>
             </div>
