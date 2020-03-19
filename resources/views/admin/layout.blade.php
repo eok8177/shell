@@ -29,7 +29,7 @@
           <button type="button" class="menu-toggler nav-link" onclick="document.getElementById('app').classList.toggle('menu-closed');"><span class="navbar-toggler-icon"></span></button>
 
           <a class="nav-link" href="{{ route('admin.page.index') }}">
-            <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.pages')</span>
+            <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.blocks')</span>
           </a>
           <a class="nav-link" href="{{ route('admin.banner.index') }}">
             <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.banners')</span>
@@ -83,7 +83,7 @@
           <div class="navbar-nav flex-column side-nav">
 
             <a class="nav-link" href="{{ route('admin.page.index') }}">
-                <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.pages')</span>
+                <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.blocks')</span>
             </a>
             <a class="nav-link" href="{{ route('admin.banner.index') }}">
                 <i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">@lang('message.banners')</span>

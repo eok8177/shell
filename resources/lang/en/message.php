@@ -52,6 +52,9 @@ return [
     'title' => 'Title',
     'description' => 'Description',
     'enabled' => 'Enabled',
+    'text' => 'Text',
+    'block' => 'Block',
+    'blocks' => 'Blocks',
 
     'banner' => 'Banner',
     'banners' => 'Banners',

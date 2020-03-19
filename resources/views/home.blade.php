@@ -25,8 +25,7 @@
         <div class="cn_main">
             <div class="cnt">
                 <div class="cnt_left">
-                    <p class="text">Спасибо, что приобрели продукцию «Шелл».<br />Воспользуйтесь нашей системой, чтобы проверить подлинность приобретенных товаров.</p>
-
+                    <div class="text">{!! $left_text->text !!}</div>
                     <div class="slide_cnt index-below-action">
                         <div id="slider" class="slider left">
                             <div id="pageSlide">
@@ -38,8 +37,7 @@
                     </div>
                 </div>
                 <div class="cnt_right">
-                    <p class="">Введите 8-значный цифровой код для проверки подлинности</p>
-                    <p style="font-weight: bold" class="">Пожалуйста, сотрите верхний слой стикера, чтобы найти код</p>
+                    <div class="text">{!! $right_text->text !!}</div>
 
                     <input type="text" 
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"

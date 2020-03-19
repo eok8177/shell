@@ -7,9 +7,9 @@
 </div>
 
 {!! Form::open(['route' => ['admin.code.import'], 'method' => 'POST', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) !!}
-  <div class="form-group">
-    <label for="name">{{Lang::get('message.file')}}</label>
-    <input type="file" name="codes">
+  <div class="custom-file mb-3">
+    <label for="file" class="custom-file-label">{{Lang::get('message.file')}}</label>
+    <input type="file" name="codes" class="custom-file-input" id="file">
   </div>
 
   <div class="form-group">

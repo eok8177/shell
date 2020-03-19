@@ -3,18 +3,18 @@
 @section('content')
 
 <div class="page-header row justify-content-between">
-  <h5>Page`s</h5>
-  <a href="{{ route('admin.page.create') }}" class="btn btn-light"><i class="fa fa-plus-square"></i> @lang('message.create')</a>
+  <h5>Block`s</h5>
+  {{-- <a href="{{ route('admin.page.create') }}" class="btn btn-light"><i class="fa fa-plus-square"></i> @lang('message.create')</a> --}}
 </div>
 
-<div class="d-flex justify-content-center">
+{{-- <div class="d-flex justify-content-center">
   <form class="input-group mb-3" action="{{ route('admin.page.index') }}" method="get" style="max-width: 600px;">
     <input type="text" class="form-control" placeholder="Search ..." name="search" value="{{$search}}">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="submit" >Search</button>
     </div>
   </form>
-</div>
+</div> --}}
 
 <div class="position-relative">
   <div class="table-responsive">
@@ -30,8 +30,8 @@
           <td><a href="{{ route('admin.page.edit', ['page'=>$page->id]) }}" class="btn">{{$page->title}}</a></td>
           <td class="text-center">
             <a href="{{ route('admin.page.edit', ['page'=>$page->id]) }}" class="btn fa fa-pencil" title="Edit"></a>
-            <a href="{{ route('admin.page.destroy', ['page'=>$page->id]) }}" class="btn fa fa-trash-o delete" title="Delete"></a>
-            <a href="{{route('admin.ajax.status', ['id' => $page->id, 'model' => 'Page', 'field' => 'show'])}}" class="status btn fa fa-{{$page->show ? 'check-circle' : 'times-circle'}}" title="Toggle Show"></a>
+            {{-- <a href="{{ route('admin.page.destroy', ['page'=>$page->id]) }}" class="btn fa fa-trash-o delete" title="Delete"></a>
+            <a href="{{route('admin.ajax.status', ['id' => $page->id, 'model' => 'Page', 'field' => 'show'])}}" class="status btn fa fa-{{$page->show ? 'check-circle' : 'times-circle'}}" title="Toggle Show"></a> --}}
           </td>
         </tr>
 
