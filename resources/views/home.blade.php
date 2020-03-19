@@ -16,7 +16,7 @@
     <div class="banner">
         <div class="slick">
             @foreach($banners as $banner)
-            <div class=""><img src="{{$banner->image}}" /></div>
+            <div class=""><img src="/resize/994/320/?img={{urlencode($banner->image)}}" /></div>
             @endforeach
         </div>
     </div>

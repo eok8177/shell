@@ -1589,3 +1589,6 @@ label{
     padding-top: 10px;
     font-size: 20px;
 }
+div.text {
+    min-height: 70px;
+}

@@ -16,6 +16,7 @@ class CreateCodesTable extends Migration
         Schema::create('codes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('code')->index();
+            $table->tinyInteger('used')->default(0);
             $table->timestamps();
         });
     }

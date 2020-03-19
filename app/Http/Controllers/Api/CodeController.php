@@ -21,9 +21,20 @@ class CodeController extends Controller
     {
         $code = $request->get('code', 0);
         $res = Code::where('code',$code)->first();
+        if ($res) {
+            if ($res->used == 1) {
+                $msg = 'Этот код уже использован! Товар подлинный';
+            } else {
+                $msg = 'Поздравляем! Товар подлинный';
+                $res->used = 1;
+                $res->save();
+            }
+        } else {
+            $msg = 'Нет такого кода';
+        }
 
         return response()->json([
-            'msg' => $res ? 'Поздравляем! Товар подлинный' : 'Нет такого кода'
+            'msg' => $msg
         ], 200);
     }
 }
