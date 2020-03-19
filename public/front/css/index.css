@@ -1593,3 +1593,6 @@ label{
 div.text {
     min-height: 70px;
 }
+span.small-text {
+    font-size: 12px;
+}
