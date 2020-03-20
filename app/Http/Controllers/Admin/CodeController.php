@@ -32,7 +32,7 @@ class CodeController extends Controller
             $codes->where('code','LIKE', '%'.$search.'%');
         }
 
-        if ($used == 0 || $used == 1) {
+        if ($used === '0' || $used === '1') {
             $codes->where('used',$used);
         }
 

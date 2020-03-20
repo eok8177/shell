@@ -91,7 +91,7 @@
             $('#loading').show();
             var code = $('#txtCode').val();
             if (!/^\d{8}$/.test(code)) {
-                $('#msg').html('Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код');
+                $('#msg').html($('#txtCode').attr('logicmsg'));
                 return;
             }
             $.ajax({
@@ -107,7 +107,7 @@
                 },
                 error: function (err) {
                     console.log(err.statusText);
-                    $('#msg').html('Извините, сеть перегружена, пожалуйста, попробуйте позже.');
+                    $('#msg').html("{{$messages['server_error'] ?? 'Извините, сеть перегружена, пожалуйста, попробуйте позже.'}}");
                     $('#loading-mask').hide();
                     $('#loading').hide();
                 }

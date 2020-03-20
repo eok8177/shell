@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Code;
+use App\Message;
 
 class CodeController extends Controller
 {
@@ -19,18 +20,20 @@ class CodeController extends Controller
 
     public function check(Request $request)
     {
+        $messages = Message::pluck('value', 'key');
+
         $code = $request->get('code', 0);
         $res = Code::where('code',$code)->first();
         if ($res) {
             if ($res->used == 1) {
-                $msg = 'Этот код уже использован! Товар подлинный';
+                $msg = $messages['code_used'];
             } else {
-                $msg = 'Поздравляем! Товар подлинный';
+                $msg = $messages['code_success'];
                 $res->used = 1;
                 $res->save();
             }
         } else {
-            $msg = 'Нет такого кода';
+            $msg = $messages['code_wrong'];
         }
 
         return response()->json([

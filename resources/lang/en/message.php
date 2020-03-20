@@ -29,6 +29,7 @@ return [
     'content' => 'Content',
     'code' => 'Code',
     'codes' => 'Codes',
+    'messages' => 'Messages',
 
     'new_user' => 'New user',
     'user' => 'User',

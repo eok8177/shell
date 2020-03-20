@@ -34,6 +34,9 @@ Route::group(['as' => 'admin.', 'middleware' => 'roles','roles' =>['admin'], 'na
     Route::get('code/clear', ['as' => 'code.clear', 'uses' => 'CodeController@delDuplicates']);
     Route::get('code-file/{file}', ['as' => 'code.importFile', 'uses' => 'CodeController@importFile']);
 
+    Route::get('messages',  ['as' => 'messages', 'uses' => 'MessageController@index']);
+    Route::post('messages', ['as' => 'messages.update', 'uses' => 'MessageController@update']);
+
 });
 
 

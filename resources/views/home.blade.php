@@ -3,11 +3,11 @@
 @section('content')
 <nav>
     <div class="nav">
-        <div class="logo" onclick="location.href='/'">СИСТЕМА ПРОВЕРКИ ПОДЛИННОСТИ ПРОДУКЦИИ «ШЕЛЛ»</div>
+        <div class="logo" onclick="location.href='/'">{!! $header_left->text ?? 'СИСТЕМА ПРОВЕРКИ ПОДЛИННОСТИ ПРОДУКЦИИ «ШЕЛЛ»'!!}</div>
         <div id="btn" class="btn"><span></span><span></span><span></span></div>
         <div id="navbar" class="navbar">
             <ul class="__layer_clcik">
-                <li><a href="https://shell.ua" target="_blank">Информация о защитном коде</a></li>
+                <li><a href="https://shell.ua" target="_blank">{!! $header_right->text !!}</a></li>
             </ul>
         </div>  
     </div>
@@ -42,13 +42,13 @@
                     <input type="text" 
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"
                         name="txtCode" value='' maxlength="8" class="inpt notnull"
-                        placeholder="Введите код здесь"
-                        nullmsg="Пожалуйста, введите код. Поле не может быть пустым"
+                        placeholder="{{$messages['placeholder'] ?? 'Введите код здесь'}}"
+                        nullmsg="{{$messages['empty_text'] ?? 'Пожалуйста, введите код. Поле не может быть пустым'}}"
                         regex="/^\d{8}$/"
-                        logicmsg="Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код"
+                        logicmsg="{{$messages['less_input'] ?? 'Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код'}}"
                         id="txtCode" 
                     />
-                    <span class="small-text">*Код можно проверить только один раз</span>
+                    <span class="small-text">{{$messages['required_string'] ?? '*Код можно проверить только один раз'}}</span>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -59,9 +59,9 @@
                 </div>
             </div>
 
-            <p class="t_url">
-                <span>Invent Group | &copy; Все права защищены 2020</span> <span></span>
-            </p>
+            <div class="t_url">
+                {!! $footer->text !!}
+            </div>
         </div>
     </form>
 </div>
