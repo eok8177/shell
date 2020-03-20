@@ -15,10 +15,32 @@ use App\Imports\CodesImport;
 
 class CodeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $select_used = [
+            'all' => 'All',
+            0 => 'Not used',
+            1 => 'Used'
+        ];
+
+        $search = $request->input('search', false);
+        $used = $request->input('used', 'all');
+
+        $codes = Code::orderBy('used','desc');
+
+        if ($search) {
+            $codes->where('code','LIKE', '%'.$search.'%');
+        }
+
+        if ($used == 0 || $used == 1) {
+            $codes->where('used',$used);
+        }
+
         return view('admin.code.index', [
-            'codes' => Code::paginate(10)
+            'codes' => $codes->paginate(10),
+            'search' => $search,
+            'used' => $used,
+            'select_used' => $select_used
         ]);
     }
 
