@@ -6,8 +6,8 @@
         <div class="logo" onclick="location.href='/'">{!! $header_left->text ?? 'СИСТЕМА ПРОВЕРКИ ПОДЛИННОСТИ ПРОДУКЦИИ «ШЕЛЛ»'!!}</div>
         <div id="btn" class="btn"><span></span><span></span><span></span></div>
         <div id="navbar" class="navbar">
-            <ul class="__layer_clcik">
-                <li><a href="https://shell.ua" target="_blank">{!! $header_right->text !!}</a></li>
+            <ul class="layer_clcik">
+                <li><a href="#">{!! $header_right->text !!}</a></li>
             </ul>
         </div>  
     </div>
@@ -64,5 +64,11 @@
             </div>
         </div>
     </form>
+
+    <div class="pop_layer none">
+        <div class="hideGif">
+            {!! $popup->text !!}
+        </div>
+    </div>
 </div>
 @endsection

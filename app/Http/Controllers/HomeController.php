@@ -18,6 +18,7 @@ class HomeController extends Controller
             'header_left' => Page::where('slug', 'header-left')->first(),
             'header_right' => Page::where('slug', 'header-right')->first(),
             'footer' => Page::where('slug', 'footer')->first(),
+            'popup' => Page::where('slug', 'pop-up')->first(),
             'messages' => Message::pluck('value', 'key')
         ]);
     }

@@ -12,9 +12,9 @@ $('.slick').slick({
 $('.layer_img').click(function () {
 
     if (navigator.userAgent.match(/mobile/i) && screen.width < 767) {
-        $(".pop_layer img").attr("src", $(this).attr("mobilelayergif"))
+        // $(".pop_layer img").attr("src", $(this).attr("mobilelayergif"))
     } else{
-        $(".pop_layer img").attr("src", $(this).attr("layergif"))
+        // $(".pop_layer img").attr("src", $(this).attr("layergif"))
     }
 
     $('.pop_layer,.gif_mask').show();
@@ -24,9 +24,9 @@ $('.layer_img').click(function () {
     var c=null;
 $(".layer_clcik").click(function () {
     if (navigator.userAgent.match(/mobile/i) && screen.width < 767) {
-         $(".pop_layer img").attr("src", $($(this).find("a")[0]).attr("mobilelabelgif"));
+         // $(".pop_layer img").attr("src", $($(this).find("a")[0]).attr("mobilelabelgif"));
     }else{
-          $(".pop_layer img").attr("src", $($(this).find("a")[0]).attr("labelgif"));
+          // $(".pop_layer img").attr("src", $($(this).find("a")[0]).attr("labelgif"));
     }
     $('.pop_layer,.gif_mask').show();
     $('.navbar').css({ 'height': '0', 'border-top': 'none' });
@@ -35,7 +35,7 @@ $(".layer_clcik").click(function () {
 
 
 $('.hideGif').click(function () {
-    $(".pop_layer img").attr("src", "");
+    // $(".pop_layer img").attr("src", "");
     $('.pop_layer,.gif_mask,.pop_layer1').hide();
     clearTimeout(c);
 })
@@ -81,7 +81,7 @@ if (navigator.userAgent.match(/mobile/i) && screen.width < 767) {
         $('.select_flag,#_select').animate({ 'bottom': '-260px' });
         $('body').css('position', 'relative');
         $('.pop_layer,.pop_layer1,.gif_mask').hide();
-                        $(".pop_layer img").attr("src", "");
+                        // $(".pop_layer img").attr("src", "");
     })
 
     $(".select_flag li,#_select li").click(function () {
@@ -119,7 +119,7 @@ if (navigator.userAgent.match(/mobile/i) && screen.width < 767) {
     });
 
     $('.gif_mask').click(function () {
-        $(".pop_layer img").attr("src", "");
+        // $(".pop_layer img").attr("src", "");
         $('.pop_layer,.gif_mask,.pop_layer1').hide();
     })
 
