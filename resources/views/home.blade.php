@@ -29,9 +29,9 @@
                     <div class="slide_cnt index-below-action">
                         <div id="slider" class="slider left">
                             <div id="pageSlide">
-                                <input id="captcha" class="valid" type="hidden" validmsg="Протяните бегунок вправо"
+                                <input id="captcha" class="valid" type="hidden" validmsg="Протягніть бігунок вправо"
                                 value="0">
-                                <span id="label" class="label"></span><span id="lableTip" hasslider="Спасибо!" noslider="Протяните бегунок вправо">Протяните бегунок вправо</span>
+                                <span id="label" class="label"></span><span id="lableTip" hasslider="Дякуємо!" noslider="Протягніть бігунок вправо">Протягніть бігунок вправо</span>
                             </div>
                         </div>
                     </div>
@@ -42,19 +42,19 @@
                     <input type="text" 
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"
                         name="txtCode" value='' maxlength="8" class="inpt notnull"
-                        placeholder="{{$messages['placeholder'] ?? 'Введите код здесь'}}"
+                        placeholder="{{$messages['placeholder'] ?? 'Введіть код тут'}}"
                         nullmsg="{{$messages['empty_text'] ?? 'Пожалуйста, введите код. Поле не может быть пустым'}}"
                         regex="/^\d{8}$/"
                         logicmsg="{{$messages['less_input'] ?? 'Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код'}}"
                         id="txtCode" 
                     />
-                    <span class="small-text">{{$messages['required_string'] ?? '*Код можно проверить только один раз'}}</span>
+                    <span class="small-text">{{$messages['required_string'] ?? '*Код можна перевірити тільки один раз'}}</span>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="cnt1">
                 <div id="msg"></div>
-                <input type="button" value="Продолжить" class="check sub" />
+                <input type="button" value="Продовжити" class="check sub" />
                 <div class="clear">
                 </div>
             </div>
