@@ -5,17 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="M3yhMc4QcyTRKMZR63GuyRqM-zN3cSZdJSBjug4q6tU" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Shell Anti-Counterfeit System') }}</title>
 
+
+
     <link rel="stylesheet" href="front/css/slick.css" />
     <link rel="stylesheet" href="front/css/front.css" />
     <link rel="stylesheet" href="front/css/index.css" />
     <link rel="stylesheet" href="front/css/select.css" />
-    <link rel="shortcut icon" href="front/images/icon/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <script type="text/javascript" src="front/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="front/js/BroswerUtil.js"></script>
     <script type="text/javascript" src="front/js/Slider.js"></script>
@@ -55,6 +58,16 @@
             overflow-y: visible;
         }
     </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127964234-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127964234-2');
+    </script> 
 </head>
 <body>
     <div id="loading-mask" class="loading-mask none"></div>
