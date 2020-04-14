@@ -48,6 +48,7 @@
                         regex="/^\d{8}$/"
                         logicmsg="{{$messages['less_input'] ?? 'Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код'}}"
                         id="txtCode" 
+                        autocomplete="off"
                     />
                     <span class="small-text">{{$messages['required_string'] ?? '*Код можна перевірити тільки один раз'}}</span>
                 </div>

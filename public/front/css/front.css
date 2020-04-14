@@ -2,7 +2,7 @@ html {
     height: 100%;
 }
 body {
-    font-family:sans-serif,verdana,Arial,Roboto,Helvetica,'Microsoft YaHei',STHeiti;
+    font-family:Arial,Roboto,Helvetica,sans-serif,'Microsoft YaHei',STHeiti;
     width: 100%;
     min-height: 100%;
     margin: 0;
@@ -10,8 +10,8 @@ body {
     position: relative;
     overflow:auto;
     box-sizing: border-box;
-    color:#575656;
-    font-size:15px;
+    color:#404040;
+    font-size:14px;
 }
 @media screen and (orientation: landscape) {
     body{
