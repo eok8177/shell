@@ -17,12 +17,12 @@
         <div class="slick">
             @foreach($banners as $banner)
             {{-- <div class=""><img src="/resize/994/320/?img={{urlencode($banner->image)}}" /></div> --}}
-            <div class=""><img src="{{ url('/resize/994/320/?img='.urlencode($banner->image)) }}" /></div>
+            <div class=""><img src="{{ url('/resize/994/320/?img='.urlencode($banner->image)) }}" alt="Shell" /></div>
             @endforeach
         </div>
     </div>
 
-    <form class="container form" action method="post" accept-charset="UTF-8">
+    <form class="container form" action="#" method="post" accept-charset="UTF-8">
         <div class="cn_main">
             <div class="cnt">
                 <div class="cnt_left">
@@ -30,9 +30,9 @@
                     <div class="slide_cnt index-below-action">
                         <div id="slider" class="slider left">
                             <div id="pageSlide">
-                                <input id="captcha" class="valid" type="hidden" validmsg="Протягніть бігунок вправо"
+                                <input id="captcha" class="valid" type="hidden" data-validmsg="Протягніть бігунок вправо"
                                 value="0">
-                                <span id="label" class="label"></span><span id="lableTip" hasslider="Дякуємо!" noslider="Протягніть бігунок вправо">Протягніть бігунок вправо</span>
+                                <span id="label" class="label"></span><span id="lableTip" data-hasslider="Дякуємо!" data-noslider="Протягніть бігунок вправо">Протягніть бігунок вправо</span>
                             </div>
                         </div>
                     </div>
@@ -44,9 +44,9 @@
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"
                         name="txtCode" value='' maxlength="8" class="inpt notnull"
                         placeholder="{{$messages['placeholder'] ?? 'Введіть код тут'}}"
-                        nullmsg="{{$messages['empty_text'] ?? 'Пожалуйста, введите код. Поле не может быть пустым'}}"
-                        regex="/^\d{8}$/"
-                        logicmsg="{{$messages['less_input'] ?? 'Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код'}}"
+                        data-nullmsg="{{$messages['empty_text'] ?? 'Пожалуйста, введите код. Поле не может быть пустым'}}"
+                        data-regex="/^\d{8}$/"
+                        data-logicmsg="{{$messages['less_input'] ?? 'Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код'}}"
                         id="txtCode" 
                         autocomplete="off"
                     />

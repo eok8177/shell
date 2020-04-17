@@ -58,7 +58,7 @@ $(document).ready(function () {
         var b = true;
         $(form).find(".notnull").each(function () {
             if ($.trim($(this).val()).length <= 0 || $.trim($(this).val()) == $.trim($(this).attr("placeholder"))) {//|| $(this).val() == this.defaultValue
-                $('#msg').html($(this).attr("nullmsg"));
+                $('#msg').html($(this).attr("data-nullmsg"));
                 $(this).select();
                 $(this).focus();
                 return b = false;
@@ -76,7 +76,7 @@ $(document).ready(function () {
         $(form).find(".select").each(function (i) {
             var ck = $(this).find('option:selected').text();
             if (ck.indexOf("选择") > -1) {
-                $('#msg').html($(this).attr("nullmsg"));
+                $('#msg').html($(this).attr("data-nullmsg"));
                 $(this).select();
                 $(this).focus();
                 return b = false;
@@ -90,7 +90,7 @@ $(document).ready(function () {
         $(form).find(".valid").each(function (i) {
             var isValid = parseInt($(this).val());
             if (!isValid) {
-                $('#msg').html($(this).attr("validmsg"));
+                $('#msg').html($(this).attr("data-validmsg"));
                 $(this).select();
                 $(this).focus();
                 return b = false;
@@ -105,7 +105,7 @@ $(document).ready(function () {
         $(form).find(".checkbox").each(function (i) {
             var ck = $(this)[0].checked;
             if (!ck) {
-                $('#msg').html($(this).attr("nullmsg"))
+                $('#msg').html($(this).attr("data-nullmsg"))
                 $(this).select();
                 $(this).focus();
                 return b = false;
@@ -118,7 +118,7 @@ $(document).ready(function () {
         if (reg.test(value)) {
             return true;
         }
-        $('#msg').html($(ele).attr("logicmsg"));
+        $('#msg').html($(ele).attr("data-logicmsg"));
         $(ele).focus();
         $(ele).select();
         return false;
@@ -127,10 +127,10 @@ $(document).ready(function () {
     function CheckInputRex(form) {
         var b = true;
         $(form).find("input[type='text']").each(function () {
-            if (typeof ($(this).attr("regex")) == 'string') {
+            if (typeof ($(this).attr("data-regex")) == 'string') {
                 if ($.trim($(this).val()).length > 0 && $.trim($(this).val()) != $.trim($(this).attr("placeholder"))) {
                     var value = $(this).attr("value") || $(this).val();
-                    var regx = eval($(this).attr("regex"));
+                    var regx = eval($(this).attr("data-regex"));
                     return b = GetFlase(value, regx, this);
                 }
             }
