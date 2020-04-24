@@ -40,6 +40,7 @@
                 <div class="cnt_right">
                     <div class="text">{!! $right_text->text !!}</div>
 
+                    <label for="txtCode">{{$messages['placeholder'] ?? 'Введіть код тут'}}</label>
                     <input type="text" 
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"
                         name="txtCode" value='' maxlength="8" class="inpt notnull"
@@ -56,7 +57,7 @@
             </div>
             <div class="cnt1">
                 <div id="msg"></div>
-                <input type="button" value="Продовжити" class="check sub" />
+                <input type="button" value="Перевірити код" class="check sub" />
                 <div class="clear">
                 </div>
             </div>
@@ -68,6 +69,7 @@
     </form>
 
     <div class="pop_layer none">
+        <button class="btn-close hideGif">x</button>
         <div class="hideGif">
             {!! $popup->text !!}
         </div>

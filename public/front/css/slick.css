@@ -63,7 +63,8 @@
   padding: 0;
   background: #fff;
 }
-.slick-prev:hover, .slick-next:hover {
+.slick-prev:hover, .slick-next:hover,
+.slick-prev:focus, .slick-next:focus {
     background-color: #fbce07;
     cursor: pointer;
 }
