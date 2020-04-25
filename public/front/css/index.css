@@ -376,6 +376,9 @@ select::-ms-expand { display: none; }
     background:none no-repeat scroll 0 0 #fbce07;
     cursor:pointer;
 }
+.index-below-action .left .label:focus {
+	background:none no-repeat scroll 0 0 #e31d1a;
+}
 .slide_cnt{
   	/*overflow:hidden;*/
   	margin-top: 14px;
@@ -821,15 +824,16 @@ label{
     padding:5px 0 15px;
 }
 
-.inpt{
+input.inpt{
 	display: block;
-	border:1px solid #595959!important;
+	border:1px solid #595959;
 	width:100%;
 	height:50px;
 	text-align:center;
 	font-size:14px;
 	box-sizing: border-box;
 }
+input.inpt:focus{border-color: #dd1d21;}
 div.text {
     min-height: 70px;
 }
@@ -891,9 +895,9 @@ div.text {
 	.text span{
 		display:block;
 	}
-	.inpt{
+	input.inpt{
 		display:block;
-		border:1px solid #595959!important;
+		border:1px solid #595959;
 		width:100%;
 		height:50px;
 		margin-top:7px;

@@ -32,7 +32,7 @@
                             <div id="pageSlide">
                                 <input id="captcha" class="valid" type="hidden" data-validmsg="Протягніть бігунок вправо"
                                 value="0">
-                                <span id="label" class="label"></span><span id="lableTip" data-hasslider="Дякуємо!" data-noslider="Протягніть бігунок вправо">Протягніть бігунок вправо</span>
+                                <button id="label" class="label"></button><span id="lableTip" data-hasslider="Дякуємо!" data-noslider="Протягніть бігунок вправо">Протягніть бігунок вправо</span>
                             </div>
                         </div>
                     </div>

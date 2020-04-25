@@ -1,33 +1,22 @@
-/**
-* Created by Administrator on 15-1-9.
-*/
-//滑动条对象
+var change = {
+  37: -40, // Arrow Left
+  38: 0,
+  39: 40, // Arrow Right
+  40: 0,
+}
+
 function Slider(swipestart, min, max, index, IsOk, lableIndex) {
     var _self = this;
-    //是否开始滑动
     _self.swipestart = swipestart;
-    //最小值
     _self.min = min;
-    //最大值
     _self.max = max;
-    //当前滑动条所处的位置
     _self.index = index;
-    //是否滑动成功
     _self.IsOk = IsOk;
-    //鼠标在滑动按钮的位置
     _self.lableIndex = lableIndex;
 
     var mobile = navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i) ? true : false;
-//    var mobile = BroswerUtil.CurrentSystem.system.android ||
-//        BroswerUtil.CurrentSystem.system.ios ||
-//        BroswerUtil.CurrentSystem.system.ipad ||
-//        BroswerUtil.CurrentSystem.system.iphone ||
-//        BroswerUtil.CurrentSystem.system.ipoad ||
-//        BroswerUtil.CurrentSystem.system.ipod ||
-//        BroswerUtil.CurrentSystem.system.nokiaN;
 
     _self.mobile = mobile;
-
 
     var width = document.body.clientWidth;
 
@@ -35,11 +24,11 @@ function Slider(swipestart, min, max, index, IsOk, lableIndex) {
     _self.isMobile = isMobile;
 }
 
-//初始化
+
 Slider.prototype.Init = function () {
-    //2015年3月4日 11:30:46注释
     //document.getElementById("btnSubmit").disabled = true;
     var _self = this;
+    _self.index = 0;
     $("#label").on("mousedown", function (event) {
         var e = event || window.event;
         _self.lableIndex = e.clientX - this.offsetLeft;
@@ -68,7 +57,7 @@ Slider.prototype.Init = function () {
                 _self.HanderIn();
 
         } catch (e) {
-            console.log(navigator.appVersion + "不支持TouchEvent事件！" + e.message);
+            console.log(navigator.appVersion + "TouchEvent！" + e.message);
         }
     });
 
@@ -77,7 +66,7 @@ Slider.prototype.Init = function () {
             if (!_self.IsOk)
                 _self.HanderMove(event);
         } catch (e) {
-            console.log(navigator.appVersion + "不支持touchmove事件！" + e.message);
+            console.log(navigator.appVersion + "touchmove！" + e.message);
         }
 
     });
@@ -87,13 +76,26 @@ Slider.prototype.Init = function () {
             if (!_self.IsOk)
                 _self.HanderOut();
         } catch (e) {
-            console.log(navigator.appVersion + "不支持touchend事件！" + e.message);
+            console.log(navigator.appVersion + "touchend！" + e.message);
         }
 
     });
+
+    $(document).on("keydown", '#label', function(e){
+        // console.log(_self);
+        if (_self.index <= 0 || isNaN(_self.index)) {
+            _self.index = 0;
+            _self.lableIndex = 0;
+        }
+        if (!_self.IsOk) {
+            _self.HanderIn();
+            var animation = change[e.which];
+            _self.index += animation;
+            _self.Move();
+        }
+    });
 }
 
-//鼠标/手指接触滑动按钮
 Slider.prototype.HanderIn = function () {
     var _self = this;
     _self.swipestart = true;
@@ -105,26 +107,21 @@ Slider.prototype.HanderIn = function () {
     }
 }
 
-//鼠标/手指移出
 Slider.prototype.HanderOut = function () {
     var _self = this;
-    //停止
     _self.swipestart = false;
     _self.Move();
 }
 
-//鼠标/手指移动
 Slider.prototype.HanderMove = function (event) {
     var _self = this;
     if (_self.swipestart && !_self.IsOk) {
         event.preventDefault();
         var event = event || window.event;
-        //移动端(平板或者手机)
         if (_self.mobile) {
             //event.originalEvent.changedTouches[0].clientX //event.originalEvent.pageX
             _self.index = event.originalEvent.changedTouches[0].clientX - _self.lableIndex;
 
-            //屏幕小于767 而且 不是移动端(平板或者手机) （这种情况属于用户把浏览器调到手机大小时）
         } else if (_self.isMobile && !_self.mobile) {
             _self.index = event.clientX - _self.lableIndex;
         } else {
@@ -137,7 +134,6 @@ Slider.prototype.HanderMove = function (event) {
 
 Slider.prototype.SliderCallBack = null;
 
-//鼠标/手指移动
 Slider.prototype.Move = function () {
     var _self = this;
     if (_self.index > 0) {
@@ -181,19 +177,19 @@ Slider.prototype.Move = function () {
     }
     $(".label").css("left", _self.index + "px");
     if (_self.index == (_self.max - num)) {
-        //停止
+
         _self.swipestart = false;
-        _self.IsOk = true; //解锁
+        _self.IsOk = true;
         $("#captcha").val(1);
         $("#lableTip").text(document.getElementById("lableTip").attributes["data-hasslider"].value);
         _self.SliderCallBack.call(this, [1])
-        //2015年3月4日 11:31:16注释
+
         //document.getElementById("btnSubmit").disabled = false;k
     } else {
-        _self.IsOk = false; //未解锁
+        _self.IsOk = false;
         $("#captcha").val(0);
         $("#lableTip").text(document.getElementById("lableTip").attributes["data-noslider"].value);
-        //2015年3月4日 11:31:24注释
+
         //document.getElementById("btnSubmit").disabled = true;
     }
 }
