@@ -41,10 +41,17 @@
                 <div class="clear">
                 </div>
             </div>
+            <div class="cnt1">
+                <div class="layer_clcik" style="text-align: center;margin-top: 20px;">
+                    <a href="#">{!! $header_right->text !!}</a>
+                </div>
+                <div class="clear"></div>
+            </div>
         </div>
     </form>
 
     <div class="pop_layer none">
+        <button class="btn-close hideGif">x</button>
         <div class="hideGif">
             {!! $popup->text !!}
         </div>

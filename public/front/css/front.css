@@ -29,6 +29,7 @@ ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,div,button,a,form,textarea,th,tr,td,table,
 a{
     text-decoration: none;
     color:#333;
+    outline: none;
 }
 ul,ol{
     list-style:none;
