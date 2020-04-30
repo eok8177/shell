@@ -13,7 +13,6 @@
 
 
 
-    <link rel="stylesheet" href="front/css/slick.css" />
     <link rel="stylesheet" href="front/css/front.css" />
     <link rel="stylesheet" href="front/css/index.css" />
     <link rel="stylesheet" href="front/css/select.css" />
@@ -22,7 +21,6 @@
     <script src="front/js/BroswerUtil.js"></script>
     <script src="front/js/Slider.js"></script>
 
-    <script src="front/js/slick.min.js"></script>
     <script src="front/js/functionUtil.js"></script>
     <script src="front/js/Red.js"></script>
     <style>
@@ -126,16 +124,6 @@
                 });
             })();
         };
-        $('.slick').slick({
-            autoplay:true,
-            speed:1500,
-            touchMove:true,
-            autoplaySpeed:2000,
-            arrows:true,
-            swipe:true,
-            useCSS:true,
-            lazyLoad:'ondemand',
-        })
     </script>
 
     <script src="//s00.static-shell.com/apps/shell-common/components/components/iframe/clientlib/external.min.js"></script>

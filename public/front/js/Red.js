@@ -8,9 +8,9 @@ $(document).ready(function () {
     //form body
     $("body").find(".form").each(function () {
         var form = this;
-        this.onclick = function (e) {
-            return Main(e, form);
-        }
+        // this.onclick = function (e) {
+        //     return Main(e, form);
+        // }
 
         var i = 0;
         document.onkeyup = function (eve) {

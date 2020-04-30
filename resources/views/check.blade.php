@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.iframe')
 
 @section('content')
 <div class="layer_main">
@@ -12,7 +12,7 @@
                             <div id="pageSlide">
                                 <input id="captcha" class="valid" type="hidden" data-validmsg="Протягніть бігунок вправо"
                                 value="0">
-                                <button id="label" class="label"></button><span id="lableTip" data-hasslider="Дякуємо!" data-noslider="Протягніть бігунок вправо">Протягніть бігунок вправо</span>
+                                <button id="label" class="label" title="Протягніть бігунок вправо"></button><span id="lableTip" data-hasslider="Дякуємо!" data-noslider="Протягніть бігунок вправо">Протягніть бігунок вправо</span>
                             </div>
                         </div>
                     </div>
@@ -37,13 +37,12 @@
             </div>
             <div class="cnt1">
                 <div id="msg"></div>
-                <input type="button" value="Перевірити код" class="check sub" />
-                <div class="clear">
-                </div>
+                <button type="submit" class="check sub">Перевірити код</button>
+                <div class="clear"></div>
             </div>
             <div class="cnt1">
-                <div class="layer_clcik" style="text-align: center;margin-top: 20px;">
-                    <a href="#">{!! $header_right->text !!}</a>
+                <div style="text-align: center;margin-top: 20px;">
+                    <a href="#" class="layer_clcik">{!! $header_right->text !!}</a>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -51,10 +50,8 @@
     </form>
 
     <div class="pop_layer none">
-        <button class="btn-close hideGif">x</button>
-        <div class="hideGif">
-            {!! $popup->text !!}
-        </div>
+        {!! $popup->text !!}
+        <button class="btn-close hideGif" title="Close">x</button>
     </div>
 </div>
 @endsection

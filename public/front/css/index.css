@@ -7,6 +7,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: icon-font;
+    src: url(../fonts/icon-font.woff2) format("woff2"),
+        url(../fonts/icon-font.woff) format("woff"),
+        url(../fonts/icon-font.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
 a:hover,
 a:focus {
 	color: #dd1d21;
@@ -26,11 +35,14 @@ body{
     height: 100%;
     z-index: 20000;
     background-color: #000;
-    filter: alpha(opacity=80);
-    -moz-opacity: 0.80;
-    opacity: 0.80;
+    /*filter: alpha(opacity=80);*/
+    /*-moz-opacity: 0.80;*/
+    /*opacity: 0.80;*/
     text-align: center;
     overflow:hidden;
+}
+.gif_mask:focus {
+	background-color: #222;
 }
 ._width{
     width:100%;
@@ -415,10 +427,11 @@ select::-ms-expand { display: none; }
 	font-weight:bold;
 	margin:10px auto;
 	cursor:pointer;
-	transition: all 0.4s;
+	/*transition: all 0.4s;*/
 }
 .sub:hover,
-.sub:focus {
+.sub:focus,
+.sub:active {
 	color: #000;
 	background: #f5ce0a;
 }
@@ -1827,4 +1840,18 @@ span.small-text {
 .btn-close:focus,
 .btn-close:hover {
     color: #ed0103;
+}
+
+a[data-suffix][target=_blank]:after,
+a[target=_blank]:after {
+    font-family: icon-font,Arial,Roboto,Helvetica,sans-serif;
+    display: inline;
+}
+a[target=_blank]:after {
+    content: " \e62f";
+    color: inherit;
+}
+.layer_clcik:hover p,
+.layer_clcik:focus p {
+	color: #dd1d21;
 }
