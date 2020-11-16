@@ -1,7 +1,27 @@
-@extends('layouts.iframe')
+@extends('layouts.app')
 
 @section('content')
+<nav>
+    <div class="nav">
+        <div class="logo" onclick="location.href='/'">{!! $header_left->text ?? 'СИСТЕМА ПРОВЕРКИ ПОДЛИННОСТИ ПРОДУКЦИИ «ШЕЛЛ»'!!}</div>
+        <div id="btn" class="btn"><span></span><span></span><span></span></div>
+        <div id="navbar" class="navbar">
+            <ul class="layer_clcik">
+                <li><a href="#">{!! $header_right->text !!}</a></li>
+            </ul>
+        </div>  
+    </div>
+</nav>
 <div class="layer_main">
+    <div class="banner">
+        <div class="slick">
+            @foreach($banners as $banner)
+            {{-- <div class=""><img src="/resize/994/320/?img={{urlencode($banner->image)}}" /></div> --}}
+            <div class=""><img src="{{ url('/resize/994/320/?img='.urlencode($banner->image)) }}" alt="Shell" /></div>
+            @endforeach
+        </div>
+    </div>
+
     <form class="container form" action="#" method="post" accept-charset="UTF-8">
         <div class="cn_main">
             <div class="cnt">
@@ -40,18 +60,16 @@
                 <button type="submit" class="check sub">Перевірити код</button>
                 <div class="clear"></div>
             </div>
-            {{-- <div class="cnt1">
-                <div style="text-align: center;margin-top: 20px;">
-                    <a href="#" class="layer_clcik">{!! $header_right->text !!}</a>
-                </div>
-                <div class="clear"></div>
-            </div> --}}
+
+            <div class="t_url">
+                {!! $footer->text !!}
+            </div>
         </div>
     </form>
 
-    {{-- <div class="pop_layer none">
+    <div class="pop_layer none">
         {!! $popup->text !!}
-        <button class="btn-close hideGif" title="Close">x</button>
-    </div> --}}
+        <button class="btn-close hideGif">x</button>
+    </div>
 </div>
 @endsection

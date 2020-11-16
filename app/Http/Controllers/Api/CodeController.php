@@ -25,11 +25,11 @@ class CodeController extends Controller
         $code = $request->get('code', 0);
         $res = Code::where('code',$code)->first();
         if ($res) {
-            if ($res->used == 1) {
+            if ($res->used > 500) {
                 $msg = $messages['code_used'];
             } else {
                 $msg = $messages['code_success'];
-                $res->used = 1;
+                $res->used = $res->used + 1;
                 $res->save();
             }
         } else {

@@ -22,7 +22,7 @@
     <script src="front/js/Slider.js"></script>
 
     <script src="front/js/functionUtil.js"></script>
-    <script src="front/js/Red.js"></script>
+    <script src="front/js/Red.js?v=1.01"></script>
     <style>
         .loading
         {

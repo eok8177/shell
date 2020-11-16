@@ -8,9 +8,9 @@ $(document).ready(function () {
     //form body
     $("body").find(".form").each(function () {
         var form = this;
-        // this.onclick = function (e) {
-        //     return Main(e, form);
-        // }
+        this.onclick = function (e) {
+            return Main(e, form);
+        }
 
         var i = 0;
         document.onkeyup = function (eve) {
@@ -115,6 +115,8 @@ $(document).ready(function () {
     }
 
     function GetFlase(value, reg, ele) {
+        // console.log(reg);
+        // console.log(reg.test(value));
         if (reg.test(value)) {
             return true;
         }
@@ -126,7 +128,7 @@ $(document).ready(function () {
 
     function CheckInputRex(form) {
         var b = true;
-        $(form).find("input[type='text']").each(function () {
+        $(form).find("input[type='tel']").each(function () {
             if (typeof ($(this).attr("data-regex")) == 'string') {
                 if ($.trim($(this).val()).length > 0 && $.trim($(this).val()) != $.trim($(this).attr("placeholder"))) {
                     var value = $(this).attr("value") || $(this).val();

@@ -21,9 +21,9 @@
                     <div class="text">{!! $right_text->text !!}</div>
 
                     <label for="txtCode">{{$messages['placeholder'] ?? 'Введіть код тут'}}</label>
-                    <input type="text" 
+                    <input type="tel" 
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"
-                        name="txtCode" value='' maxlength="8" class="inpt notnull"
+                        name="txtCode" value='' minlength="8" maxlength="8" class="inpt notnull"
                         placeholder="{{$messages['placeholder'] ?? 'Введіть код тут'}}"
                         data-nullmsg="{{$messages['empty_text'] ?? 'Пожалуйста, введите код. Поле не может быть пустым'}}"
                         data-regex="/^\d{8}$/"
@@ -40,18 +40,18 @@
                 <button type="submit" class="check sub">Перевірити код</button>
                 <div class="clear"></div>
             </div>
-            <div class="cnt1">
+            {{-- <div class="cnt1">
                 <div style="text-align: center;margin-top: 20px;">
                     <a href="#" class="layer_clcik">{!! $header_right->text !!}</a>
                 </div>
                 <div class="clear"></div>
-            </div>
+            </div> --}}
         </div>
     </form>
 
-    <div class="pop_layer none">
+    {{-- <div class="pop_layer none">
         {!! $popup->text !!}
         <button class="btn-close hideGif" title="Close">x</button>
-    </div>
+    </div> --}}
 </div>
 @endsection

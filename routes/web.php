@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+// Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('/', function() {
+  return Redirect::to('https://www.shell.ua/shellcheck');
+});
 Route::get('/check', ['as' => 'check', 'uses' => 'HomeController@check']);
 
 Auth::routes();

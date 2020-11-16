@@ -26,7 +26,7 @@ class CodeController extends Controller
         $search = $request->input('search', false);
         $used = $request->input('used', 'all');
 
-        $codes = Code::orderBy('used','desc');
+        $codes = Code::orderBy('updated_at','desc');
 
         if ($search) {
             $codes->where('code','LIKE', '%'.$search.'%');

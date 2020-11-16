@@ -38,6 +38,7 @@
         <tr>
           <th scope="col">Code</th>
           <th scope="col">Used</th>
+          <th scope="col">Date of last updated code</th>
           <th scope="col" class="text-center">Actions</th>
         </tr>
       </thead>
@@ -47,7 +48,11 @@
           <td>
             @if($code->used)
             <i class="fa fa-check-circle"></i>
+            <small> {{$code->used}}</small>
             @endif
+          </td>
+          <td>
+            {{$code->updated_at}}
           </td>
           <td class="text-center">
             <a href="{{ route('admin.code.destroy', ['code'=>$code->id]) }}" class="btn fa fa-trash-o delete" title="Delete"></a>
