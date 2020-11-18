@@ -9,6 +9,7 @@ $(document).ready(function () {
     $("body").find(".form").each(function () {
         var form = this;
         this.onclick = function (e) {
+            e.preventDefault();
             return Main(e, form);
         }
 
