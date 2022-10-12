@@ -25,7 +25,7 @@ class CodeController extends Controller
         $code = $request->get('code', 0);
         $res = Code::where('code',$code)->first();
         if ($res) {
-            if ($res->used > 0) {
+            if ($res->used > 1) {
                 $msg = $messages['code_used'];
             } else {
                 $msg = $messages['code_success'];
