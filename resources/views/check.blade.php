@@ -1,5 +1,4 @@
 @extends('layouts.iframe')
-
 @section('content')
 <div class="layer_main">
     <form class="container form" action="#" method="post" accept-charset="UTF-8">
@@ -22,11 +21,11 @@
 
                     <label for="txtCode">{{$messages['placeholder'] ?? 'Введіть код тут'}}</label>
                     <input type="tel" 
-                        oninput="this.value = this.value.replace(/[^0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"
+                        oninput="this.value = this.value.replace(/[^\wа-яА-Я0-9]/g, '');if (this.value.length > 8) {this.value = this.value.substring(0,8);}"
                         name="txtCode" value='' minlength="8" maxlength="8" class="inpt notnull"
                         placeholder="{{$messages['placeholder'] ?? 'Введіть код тут'}}"
                         data-nullmsg="{{$messages['empty_text'] ?? 'Пожалуйста, введите код. Поле не может быть пустым'}}"
-                        data-regex="/^\d{8}$/"
+                        data-regex="/^.{8}$/"
                         data-logicmsg="{{$messages['less_input'] ?? 'Вы ввели менее 8 цифр. Пожалуйста, проверьте и введите правильный код'}}"
                         id="txtCode" 
                         autocomplete="off"
@@ -40,18 +39,7 @@
                 <button type="submit" class="check sub">Перевірити код</button>
                 <div class="clear"></div>
             </div>
-            {{-- <div class="cnt1">
-                <div style="text-align: center;margin-top: 20px;">
-                    <a href="#" class="layer_clcik">{!! $header_right->text !!}</a>
-                </div>
-                <div class="clear"></div>
-            </div> --}}
         </div>
     </form>
-
-    {{-- <div class="pop_layer none">
-        {!! $popup->text !!}
-        <button class="btn-close hideGif" title="Close">x</button>
-    </div> --}}
 </div>
 @endsection

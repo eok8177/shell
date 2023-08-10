@@ -100,7 +100,7 @@
                 $('#loading-mask').show();
                 $('#loading').show();
                 var code = $('#txtCode').val();
-                if (!/^\d{8}$/.test(code)) {
+                if (!/^.{8}$/.test(code)) {
                     $('#msg').html($('#txtCode').attr('logicmsg'));
                     return;
                 }
